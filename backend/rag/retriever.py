@@ -377,21 +377,46 @@ def retrieve(
     # 否则 6 个域 × 8 条 = 48 条候选，Reranker 的费用和延迟都会上去
     per_domain = top_k if len(domains) == 1 else max(2, top_k // 2)
 
-    vector = embedder.embed_query(query)
-    for item in domains:
-        hits = milvus_store.search(
-            collection_name(item), vector, top_k=per_domain
-        )
-        for hit in hits:
-            hit["source"] = "vector"
-        vector_hits.extend(hits)
+    # ⚠️ embedding 失败必须降级，不能把整条检索带崩。
+    #
+    # 踩过的坑：embedding 接口返回 429（余额不足）时，这里直接抛异常，
+    # 上层 catch 之后返回空列表 —— 于是**结构化直查明明命中了第X条，也被扔掉了**。
+    # 日志里能看到这样的组合：
+    #     结构化直查命中：劳动合同法 第十九条
+    #     检索失败：Embedding 调用失败
+    # 用户问"第十九条怎么规定"，系统却答"未检索到对应法条"，这不可接受。
+    #
+    # 现在改成：向量路挂了就跳过，只要结构化命中还在，照样能返回准确结果。
+    vector: list[float] | None = None
+    try:
+        vector = embedder.embed_query(query)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("向量检索跳过（embedding 不可用）：%s", exc)
+
+    if vector:
+        for item in domains:
+            try:
+                hits = milvus_store.search(
+                    collection_name(item), vector, top_k=per_domain
+                )
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("集合 %s 检索失败：%s", item, exc)
+                continue
+            for hit in hits:
+                hit["source"] = "vector"
+            vector_hits.extend(hits)
 
     # ---------------- 第 3 路：词表扩展补召回 ----------------
     expanded = _expand_query(query, domain)
     if expanded != query:
         logger.info("查询扩展：%s -> %s", query, expanded)
-        expanded_vector = embedder.embed_query(expanded)
-        for item in domains:
+        expanded_vector = None
+        if vector is not None:          # 向量路都没通，扩展路更没意义
+            try:
+                expanded_vector = embedder.embed_query(expanded)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("扩展召回跳过：%s", exc)
+        for item in (domains if expanded_vector else []):
             for hit in milvus_store.search(
                 collection_name(item), expanded_vector, top_k=max(2, per_domain // 2)
             ):
