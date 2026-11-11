@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 环境变量（含 API Key 与数据库密码，绝对不要提交）
+backend/.env
+
+# 运行时数据
+storage/milvus_lite/
+storage/uploads/
+*.log
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 面试准备材料（个人内容，不公开）
+docs/03-面试问答.md
+# 学习笔记（个人整理，非项目文档）
+docs/10-Agent与RAG知识要点.md

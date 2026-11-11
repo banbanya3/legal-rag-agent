@@ -1,0 +1,557 @@
+{
+  "version": "1.0",
+  "k": 4,
+  "note": "标注方式：expect 是 ground truth 的（法律简称, 条号）。匹配时用简称包含判断，避免全称/简称差异导致误判。",
+  "cases": [
+    {
+      "id": 1,
+      "type": "explicit",
+      "query": "劳动合同法第十九条关于试用期是怎么规定的",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第十九条"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "explicit",
+      "query": "劳动法第四十四条对加班工资怎么规定",
+      "expect": [
+        {
+          "law": "劳动法",
+          "article": "第四十四条"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "explicit",
+      "query": "民法典第一千零四十七条",
+      "expect": [
+        {
+          "law": "民法典婚姻家庭编",
+          "article": "第一千零四十七条"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "explicit",
+      "query": "民法典侵权责任编第一千一百七十六条",
+      "expect": [
+        {
+          "law": "民法典侵权责任编",
+          "article": "第一千一百七十六条"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "explicit",
+      "query": "刑法第二百六十四条盗窃罪",
+      "expect": [
+        {
+          "law": "刑法侵犯财产罪",
+          "article": "第二百六十四条"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "explicit",
+      "query": "消费者权益保护法第二十五条七天无理由退货",
+      "expect": [
+        {
+          "law": "消费者权益保护法",
+          "article": "第二十五条"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "explicit",
+      "query": "个人信息保护法第十三条规定了什么",
+      "expect": [
+        {
+          "law": "个人信息保护法",
+          "article": "第十三条"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "explicit",
+      "query": "专利法第二十二条新颖性",
+      "expect": [
+        {
+          "law": "专利法",
+          "article": "第二十二条"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "explicit",
+      "query": "劳动法第四十一条加班时长",
+      "expect": [
+        {
+          "law": "劳动法",
+          "article": "第四十一条"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "explicit",
+      "query": "国家赔偿法第二条",
+      "expect": [
+        {
+          "law": "国家赔偿法",
+          "article": "第二条"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "heading",
+      "query": "经济补偿按什么标准计算",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第四十七条"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "heading",
+      "query": "哪些情形用人单位要支付经济补偿",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第四十六条"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "heading",
+      "query": "竞业限制的期限最长可以约定多久",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第二十四条"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "heading",
+      "query": "每周至少要休息几天",
+      "expect": [
+        {
+          "law": "劳动法",
+          "article": "第三十八条"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "heading",
+      "query": "带薪年休假有多少天",
+      "expect": [
+        {
+          "law": "劳动法",
+          "article": "第四十五条"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "heading",
+      "query": "劳动仲裁的时效是多长时间",
+      "expect": [
+        {
+          "law": "劳动争议调解仲裁法",
+          "article": "第二十七条"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "heading",
+      "query": "婚后一方的工资算夫妻共同财产吗",
+      "expect": [
+        {
+          "law": "民法典婚姻家庭编",
+          "article": "第一千零六十二条"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "heading",
+      "query": "哪些格式条款是无效的",
+      "expect": [
+        {
+          "law": "民法典合同编",
+          "article": "第四百九十七条"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "heading",
+      "query": "没有遗嘱时遗产按什么顺序继承",
+      "expect": [
+        {
+          "law": "民法典继承编",
+          "article": "第一千一百二十七条"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "heading",
+      "query": "小区里的车位车库归谁所有",
+      "expect": [
+        {
+          "law": "民法典物权编",
+          "article": "第二百七十五条"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "heading",
+      "query": "限制民事行为能力人是指哪些人",
+      "expect": [
+        {
+          "law": "民法典总则编",
+          "article": "第十九条"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "heading",
+      "query": "哪些人可以担任辩护人",
+      "expect": [
+        {
+          "law": "刑事诉讼法",
+          "article": "第三十三条"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "heading",
+      "query": "未成年人犯罪要负刑事责任吗",
+      "expect": [
+        {
+          "law": "刑法总则",
+          "article": "第十七条"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "heading",
+      "query": "网购可以七天无理由退货吗",
+      "expect": [
+        {
+          "law": "消费者权益保护法",
+          "article": "第二十五条"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "heading",
+      "query": "公司注册资本的认缴期限是多久",
+      "expect": [
+        {
+          "law": "公司法",
+          "article": "第四十七条"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "heading",
+      "query": "个税的应纳税所得额怎么算",
+      "expect": [
+        {
+          "law": "个人所得税法",
+          "article": "第六条"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "heading",
+      "query": "敏感个人信息包括哪些",
+      "expect": [
+        {
+          "law": "个人信息保护法",
+          "article": "第二十八条"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "heading",
+      "query": "著作权包含哪些权利",
+      "expect": [
+        {
+          "law": "著作权法",
+          "article": "第十条"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "type": "heading",
+      "query": "普通诉讼时效是几年",
+      "expect": [
+        {
+          "law": "诉讼时效与证据规则",
+          "article": "第一百八十八条"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "type": "heading",
+      "query": "违法行为轻微可以不予行政处罚吗",
+      "expect": [
+        {
+          "law": "行政处罚法",
+          "article": "第三十三条"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "oral",
+      "query": "老板一直不给我加班费怎么办",
+      "expect": [
+        {
+          "law": "劳动法",
+          "article": "第四十四条"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "type": "oral",
+      "query": "公司不签书面劳动合同能要双倍工资吗",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第八十二条"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "type": "oral",
+      "query": "试用期说我不合格就辞退合法吗",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第二十一条"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "oral",
+      "query": "怀孕了公司能开除我吗",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第四十二条"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "type": "oral",
+      "query": "公司违法辞退我要赔多少钱",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第八十七条"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "type": "oral",
+      "query": "公司拖欠工资我可以直接辞职要补偿吗",
+      "expect": [
+        {
+          "law": "劳动合同法",
+          "article": "第三十八条"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "type": "oral",
+      "query": "多大年龄可以领证结婚",
+      "expect": [
+        {
+          "law": "民法典婚姻家庭编",
+          "article": "第一千零四十七条"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "type": "oral",
+      "query": "打球时被人撞伤了能要求对方赔吗",
+      "expect": [
+        {
+          "law": "民法典侵权责任编",
+          "article": "第一千一百七十六条"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "type": "oral",
+      "query": "被人打伤了可以要求赔哪些费用",
+      "expect": [
+        {
+          "law": "民法典侵权责任编",
+          "article": "第一千一百七十九条"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "type": "oral",
+      "query": "被逼着结的婚可以撤销吗",
+      "expect": [
+        {
+          "law": "民法典婚姻家庭编",
+          "article": "第一千零五十二条"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "type": "oral",
+      "query": "八岁的小孩自己买东西算数吗",
+      "expect": [
+        {
+          "law": "民法典总则编",
+          "article": "第二十条"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "type": "oral",
+      "query": "偷东西被抓会判几年",
+      "expect": [
+        {
+          "law": "刑法侵犯财产罪",
+          "article": "第二百六十四条"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "type": "oral",
+      "query": "醉驾会怎么处罚",
+      "expect": [
+        {
+          "law": "刑法危害公共安全罪",
+          "article": "第一百三十三条"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "type": "oral",
+      "query": "产品有缺陷造成人身伤害谁来赔",
+      "expect": [
+        {
+          "law": "产品质量法",
+          "article": "第四十一条"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "type": "oral",
+      "query": "什么情况下需要办理个税汇算清缴",
+      "expect": [
+        {
+          "law": "个人所得税法",
+          "article": "第十一条"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "type": "oral",
+      "query": "公司用我的照片做宣传可以吗",
+      "expect": [
+        {
+          "law": "个人信息保护法",
+          "article": "第十三条"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "type": "oral",
+      "query": "APP 收集我的信息要经过我同意吗",
+      "expect": [
+        {
+          "law": "个人信息保护法",
+          "article": "第十四条"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "type": "oral",
+      "query": "对行政处罚不服可以申请复议吗",
+      "expect": [
+        {
+          "law": "行政复议法",
+          "article": "第十一条"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "type": "oral",
+      "query": "仲裁和打官司有什么区别",
+      "expect": [
+        {
+          "law": "仲裁法与法律援助法",
+          "article": "第二条"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "type": "oral",
+      "query": "认罪认罚能从轻处罚吗",
+      "expect": [
+        {
+          "law": "刑事诉讼法",
+          "article": "第十五条"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# ============================================================
+# 法眼 · 法律知识库智能问答系统 —— 后端依赖
+# 安装： pip install -r requirements.txt
+# Python 3.10+（Windows / macOS / Linux 均可）
+# ============================================================
+
+# --- Web 框架 ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9   # 文件上传（UploadFile）依赖它
+# 说明：.env 由 backend/config.py 内置的 20 行解析器读取，
+# 不依赖 python-dotenv（少一个依赖，优先级也更明确）
+
+# --- 数据校验（schemas 层） ---
+pydantic>=2.6
+
+# --- 数据库 ---
+SQLAlchemy>=2.0
+PyMySQL>=1.1
+
+# --- 向量库（Milvus Lite 由 milvus-lite 提供，无需 Docker） ---
+pymilvus>=2.4
+milvus-lite>=2.4          # Linux/macOS 自带；Windows 需 3.x 以上版本
+faiss-cpu>=1.8            # Milvus Lite 在某些平台上用它做底层索引
+
+# --- 大模型 / HTTP ---
+httpx>=0.27
+
+# --- 文档解析（PDF / Word）---
+# 只用它的 reader 把文件转成纯文本，切分和检索仍走自研链路。
+# 说明：这个包会带进 llama-index-core 等 40+ 个依赖，安装约 1—2 分钟。
+llama-index-readers-file>=0.4
+
+# --- 混合检索 ---
+# BM25 稀疏检索：jieba 负责中文分词，rank-bm25 是算法实现（纯 Python，无编译依赖）
+jieba>=0.42
+rank-bm25>=0.2
+
+# --- MCP 服务（可选）---
+# 只有需要把知识库暴露给 Claude Desktop / Cursor 时才装。
+# 注意版本：mcp 2.x 把 FastMCP 改名为 MCPServer（mcp.server.mcpserver），
+# 网上大量 v1 教程用的是 from mcp.server.fastmcp import FastMCP，那个在 2.x 会报错。
+mcp>=2.0
